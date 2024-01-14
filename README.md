@@ -8,3 +8,10 @@ Compile:
 Run:
 
 `./<filename>.out`
+
+
+### To run the cleanup script
+
+`chmod u+x cleanup.sh`
+
+`./cleanup.sh`
