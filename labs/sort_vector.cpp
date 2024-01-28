@@ -30,9 +30,21 @@ But you are welcome to try others: https://en.wikipedia.org/wiki/Sorting_algorit
 using namespace std;
 
 /**
+ * Prints all of the elements of a vector.
+ * 
+ * @param myVec Vector whose values are printed.
+*/
+void PrintVector(const vector<int>& myVec) {
+    for (int n : myVec) {
+        cout << n << ",";
+    }
+    cout << endl;
+}
+
+/**
  * Populates a vector with values from standard input.
  * 
- * @param myVec Vector which will be populated with values;
+ * @param myVec Vector which will be populated with values.
 */
 void PopulateVector(vector<int>& myVec) {
     int numberOfElements;
@@ -52,14 +64,15 @@ void PopulateVector(vector<int>& myVec) {
  *
  * @param myVec Vector whose values are sorted in-place.
  */
-void SortVector(vector<int>& myVec) 
-{
+void SortVector(vector<int>& myVec) {
     for (int i = 0; i < myVec.size(); ++i) {
-        for (int j = 0; j < myVec.size(); ++j) {
-            int left = myVec.at(i);
+        for (int j = 1; j < (myVec.size() - i); ++j) {
             int right = myVec.at(j);
-            if (left > right) {
-                myVec.at(i) = right;
+            int left = myVec.at(j-1);
+            // If the element on the right is higher than
+            // the one on the left, swap the elements.
+            if (right > left) {
+                myVec.at(j-1) = right;
                 myVec.at(j) = left;
             }
         }
@@ -67,11 +80,18 @@ void SortVector(vector<int>& myVec)
 }
 
 int main() {
-    vector<int> v1;
-    PopulateVector(v1);
-    for (int n : v1) {
-        cout << n << " ";
-    }
-    cout << endl;
+    // Declare a vector of ints.
+    vector<int> myVec;
+
+    // Populate the vector with values from standard input.
+    PopulateVector(myVec);
+    
+    // Sort the vector in-place.
+    SortVector(myVec);
+
+    // Print the vector.
+    PrintVector(myVec);
+
+    // Exit program.
     return 0;
 }
