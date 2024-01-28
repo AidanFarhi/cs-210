@@ -34,8 +34,7 @@ void display_time(Time& time) {
     cout << "   ";
     cout << "**************************";
     cout << endl;
-    cout << "*     12-Hour Clock      *";
-    cout << "   ";
+    cout << "*     12-Hour Clock      *   ";
     cout << "*     24-Hour Clock      *";
     cout << endl;
     cout << "*      ";
@@ -43,9 +42,7 @@ void display_time(Time& time) {
     cout << setw(2) << setfill('0') << time.minute << ":"; 
     cout << setw(2) << setfill('0') << time.second;
     cout << am_or_pm;
-    cout << "       *";
-    cout << "   ";
-    cout << "*        ";
+    cout << "       *   *        ";
     cout << setw(2) << setfill('0') << time.hour << ":";
     cout << setw(2) << setfill('0') << time.minute << ":"; 
     cout << setw(2) << setfill('0') << time.second;
