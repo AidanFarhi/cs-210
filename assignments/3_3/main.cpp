@@ -11,11 +11,11 @@
 void init_time(Time& time) {
     int hour, minute, second;
     cout << "Set the initial time (24-Hour format)" << endl;
-    cout << "Enter initial hour: ";
+    cout << "Enter hour: ";
     cin >> hour;
-    cout << "Enter initial minute: ";
+    cout << "Enter minute: ";
     cin >> minute;
-    cout << "Enter initial second: ";
+    cout << "Enter second: ";
     cin >> second;
     set_time(time, hour, minute, second);
 }
@@ -38,13 +38,13 @@ int main() {
         display_menu();
         cin >> user_choice;
         if (user_choice == 1) {
-            cout << "Adding one hour" << endl;
+            add_hour(time);
             display_time(time);
         } else if (user_choice == 2) {
-            cout << "Adding one minute" << endl;
+            add_minute(time);
             display_time(time);
         } else if (user_choice == 3) {
-            cout << "Adding one second" << endl;
+            add_second(time);
             display_time(time);
         } else if (user_choice == 4) {
             break;
