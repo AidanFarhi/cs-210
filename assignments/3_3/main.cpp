@@ -28,19 +28,21 @@ int main() {
     while (user_choice != 4) {
         display_menu();
         cin >> user_choice;
-        if (user_choice == 1) {
-            add_hour(time);
-            display_time(time);
-        } else if (user_choice == 2) {
-            add_minute(time);
-            display_time(time);
-        } else if (user_choice == 3) {
-            add_second(time);
-            display_time(time);
-        } else if (user_choice == 4) {
-            break;
-        } else {
-            continue;
+        switch (user_choice) {
+            case 1:
+                add_hour(time);
+                display_time(time);
+                break;
+            case 2:
+                add_minute(time);
+                display_time(time);
+                break;
+            case 3:
+                add_second(time);
+                display_time(time);
+                break;
+            default:
+                break;
         }
     }
 
