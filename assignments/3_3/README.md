@@ -20,12 +20,12 @@ Clock display:
 ```
 **************************   **************************
 *     12-Hour Clock      *   *     24-Hour Clock      *
-*      12:12:12 PM       *   *        12:12:12        *
+*      02:23:09 PM       *   *        14:23:09        *
 **************************   **************************
 ```
 
 ### To compile and run program (Mac/Linux)
 
-`g++ -o main.out main.cpp`
+`g++ -o main *.cpp`
 
-`./main.out`
+`./main`

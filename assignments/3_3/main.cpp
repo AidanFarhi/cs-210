@@ -5,20 +5,11 @@
  * Author:  Aidan Farhi
  * Date:    2024-01-28
 */
+#include <iostream>
 #include "display.h"
 #include "time.h"
-
-void init_time(Time& time) {
-    int hour, minute, second;
-    cout << "Set the initial time (24-Hour format)" << endl;
-    cout << "Enter hour: ";
-    cin >> hour;
-    cout << "Enter minute: ";
-    cin >> minute;
-    cout << "Enter second: ";
-    cin >> second;
-    set_time(time, hour, minute, second);
-}
+#include "init.h"
+using namespace std;
 
 int main() {
 

@@ -17,16 +17,7 @@ struct Time {
  * 
  * @returns True if the time is valid or false if it is not.
 */
-bool is_valid_time(const Time& time) {
-    if ((time.hour < 0) || (time.hour > 23)) {
-        return false;
-    } else if ((time.minute < 0) || (time.minute > 59)) {
-        return false;
-    } else if ((time.second < 0) || (time.second > 59)) {
-        return false;
-    }
-    return true;
-}
+bool is_valid_time(const Time& time);
 
 /**
  * Sets a `Time` struct with a given hour, minute, and second.
@@ -36,47 +27,27 @@ bool is_valid_time(const Time& time) {
  * @param minute The minute to set.
  * @param second The second to set.
 */
-void set_time(Time& time, int hour, int minute, int second) {
-    time.hour = hour;
-    time.minute = minute;
-    time. second = second;
-}
+void set_time(Time& time, int hour, int minute, int second);
 
 /**
  * Adds an hour to a `Time` struct.
  * 
  * @param time The `Time` struct to add an hour to.
 */
-void add_hour(Time& time) {
-    time.hour = time.hour == 23 ? 0 : time.hour + 1;
-}
+void add_hour(Time& time);
 
 /**
  * Adds an hour to a `Time` struct.
  * 
  * @param time The `Time` struct to add an minute to.
 */
-void add_minute(Time& time) {
-    if (time.minute == 59) {
-        add_hour(time);
-        time.minute = 0;
-    } else {
-        time.minute++;
-    }
-}
+void add_minute(Time& time);
 
 /**
  * Adds an second to a `Time` struct.
  * 
  * @param time The `Time` struct to add an second to.
 */
-void add_second(Time& time) {
-    if (time.second == 59) {
-        add_minute(time);
-        time.second = 0;
-    } else {
-        time.second++;
-    }
-}
+void add_second(Time& time);
 
 #endif
