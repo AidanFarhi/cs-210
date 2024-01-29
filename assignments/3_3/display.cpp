@@ -13,7 +13,7 @@ void display_menu() {
     cout << "**************************" << endl;
 }
 
-void display_time(Time& time) {
+void display_time(const Time& time) {
     // Figure out whether to display AM or PM.
     string am_or_pm = (time.hour >= 12) ? " PM" : " AM";
     // If the hour value is > 12, subtract 12 to display the correct 12-Hour Clock value.

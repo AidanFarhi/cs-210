@@ -12,6 +12,6 @@ void display_menu();
  * 
  * @param time `Time` struct holding the current time values to display.
 */
-void display_time(Time& time);
+void display_time(const Time& time);
 
 #endif
