@@ -2,7 +2,7 @@
 
 This program enables the user to display and manipulate a 12 and 24 hour clock.
 
-### Example
+### Examples
 
 Menu:
 
