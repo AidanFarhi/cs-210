@@ -59,3 +59,9 @@ Bottled Water 10 @ $1 = $10
 
 Total: $13
 ```
+
+### To compile and run the program (Mac/Linux)
+
+`g++ -o main *.cpp`
+
+`./main`
