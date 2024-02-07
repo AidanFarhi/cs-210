@@ -30,9 +30,7 @@ int main() {
     }
 
     // Loop through input file, convert f to c, and write result to output file.
-    while (!input_file.eof()) {
-        input_file >> city_name;
-        input_file >> temp_fahr;
+    while (input_file >> city_name >> temp_fahr) {
         temp_cels = (temp_fahr - 32) * (5.0 / 9.0);
         output_file << city_name << " " << temp_cels << endl;
     }
