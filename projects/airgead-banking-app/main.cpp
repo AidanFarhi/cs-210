@@ -8,7 +8,10 @@ int main()
 {
     InvestmentDetails investment_details = {-1, -1, -1, -1};
     IO io;
-    InvestmentReportGenerator investment_report_generator;
+    ReportGenerator report_generator;
+
     io.GetInvestmentDetails(investment_details);
+    report_generator.WithMonthlyDeposits(investment_details);
+
     return 0;
 }
