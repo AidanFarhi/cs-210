@@ -32,3 +32,11 @@ void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
     cin.ignore();
     cin.get();
 }
+
+void IO::PrintReport(InvestmentReport report)
+{
+    for (InvestmentRecord r : report.investment_records)
+    {
+        cout << r.year << " " << r.balance << " " << r.earned_interest << endl;
+    }
+}

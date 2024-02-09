@@ -7,6 +7,7 @@ class IO
 {
     public:
         void GetInvestmentDetails(InvestmentDetails& investment_details);
+        void PrintReport(InvestmentReport report);
 };
 
 #endif

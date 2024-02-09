@@ -11,7 +11,8 @@ int main()
     ReportGenerator report_generator;
 
     io.GetInvestmentDetails(investment_details);
-    report_generator.WithMonthlyDeposits(investment_details);
-
+    InvestmentReport report = report_generator.WithMonthlyDeposits(investment_details);
+    io.PrintReport(report);
+    
     return 0;
 }
