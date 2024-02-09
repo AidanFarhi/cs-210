@@ -27,4 +27,7 @@ void UserInput::GetInvestmentDetails(InvestmentDetails& investment_details)
         cout << "Number of years: ";
         cin >> investment_details.number_of_years;
     }
+    cout << "Press any key to continue...";
+    cin.ignore();
+    cin.get();
 }
