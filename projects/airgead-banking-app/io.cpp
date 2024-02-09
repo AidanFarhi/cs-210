@@ -2,8 +2,9 @@
 using namespace std;
 
 #include "io.h"
+#include "investment.h"
 
-void UserInput::GetInvestmentDetails(InvestmentDetails& investment_details)
+void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
 {
     cout << "**************************************" << endl;
     cout << "************ Data Input **************" << endl;
