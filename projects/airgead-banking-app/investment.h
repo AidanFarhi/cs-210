@@ -12,7 +12,7 @@ struct InvestmentDetails
     int number_of_years;
 };
 
-struct InvestmentRecord
+struct YearEndBalance
 {
     int year;
     double balance;
@@ -21,7 +21,7 @@ struct InvestmentRecord
 
 struct InvestmentReport
 {
-    vector<InvestmentRecord> investment_records;
+    vector<YearEndBalance> balances;
 };
 
 class ReportGenerator

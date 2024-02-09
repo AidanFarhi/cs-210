@@ -35,8 +35,9 @@ void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
 
 void IO::PrintReport(InvestmentReport report)
 {
-    for (InvestmentRecord r : report.investment_records)
+    for (YearEndBalance year_end_balance : report.balances)
     {
-        cout << r.year << " " << r.balance << " " << r.earned_interest << endl;
+        cout << year_end_balance.year << " " << year_end_balance.balance;
+        cout << " " << year_end_balance.earned_interest << endl;
     }
 }
