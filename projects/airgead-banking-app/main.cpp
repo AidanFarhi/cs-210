@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-#include "user_input.h"
-#include "report_display.h"
+#include "io.h"
 
 int main()
 {
-    double initial_investment;
-    double monthly_deposit;
-    double annual_interest;
-    int number_of_years;
+    InvestmentDetails investment_details = {-1, -1, -1, -1};
+    UserInput user_input;
+    user_input.GetInvestmentDetails(investment_details);
+    cout << investment_details.initial_investment << endl;
+    cout << investment_details.monthly_deposit << endl;
+    cout << investment_details.annual_interest << endl;
+    cout << investment_details.number_of_years << endl;
     return 0;
 }
