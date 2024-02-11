@@ -46,9 +46,9 @@ class ReportGenerator
          * This method calculates the investment growth over a specified period, taking into account
          * the initial investment, annual interest rate, and, optionally, monthly deposits.
          *
-         * \param investment_details The details of the investment, including initial investment,
+         * \param t_investment_details The details of the investment, including initial investment,
          *        annual interest rate, number of years, and, if applicable, monthly deposit amount.
-         * \param with_monthly_deposits A boolean flag indicating whether monthly deposits are considered
+         * \param t_with_monthly_deposits A boolean flag indicating whether monthly deposits are considered
          *        in the investment calculation.
          *
          * \return An InvestmentReport object containing information about the investment growth over time.
@@ -60,7 +60,7 @@ class ReportGenerator
          *
          * \see InvestmentDetails, InvestmentReport, YearEndBalance
          */
-        InvestmentReport GenerateReport(InvestmentDetails investment_details, bool with_monthly_deposits);
+        InvestmentReport generate_report(InvestmentDetails t_investment_details, bool t_with_monthly_deposits);
 };
 
 #endif

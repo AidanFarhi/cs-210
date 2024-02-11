@@ -3,27 +3,27 @@ using namespace std;
 
 #include "investment.h"
 
-InvestmentReport ReportGenerator::GenerateReport(InvestmentDetails investment_details, bool with_monthly_deposits)
+InvestmentReport ReportGenerator::generate_report(InvestmentDetails t_investment_details, bool t_with_monthly_deposits)
 {
     InvestmentReport report;
-    double monthly = investment_details.monthly_deposit;
-    int number_of_months = investment_details.number_of_years * 12;
-    double current_balance = investment_details.initial_investment;
+    double monthly = t_investment_details.monthly_deposit;
+    int number_of_months = t_investment_details.number_of_years * 12;
+    double current_balance = t_investment_details.initial_investment;
     double current_year_earned_interest = 0;
     // Loop through the total number of months to calculate monthly compounding interest.
     for (int current_month = 1; current_month <= number_of_months; current_month++)
     {
         double interest;
-        if (with_monthly_deposits)
+        if (t_with_monthly_deposits)
         {
-            interest = (current_balance + monthly) * ((investment_details.annual_interest / 100) / 12);
+            interest = (current_balance + monthly) * ((t_investment_details.annual_interest / 100) / 12);
         }
         else
         {
-            interest = (current_balance) * ((investment_details.annual_interest / 100) / 12);
+            interest = (current_balance) * ((t_investment_details.annual_interest / 100) / 12);
         }
         current_balance = current_balance + interest;
-        if (with_monthly_deposits)
+        if (t_with_monthly_deposits)
         {
             current_balance += monthly;
         }

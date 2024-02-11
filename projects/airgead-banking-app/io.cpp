@@ -5,11 +5,12 @@ using namespace std;
 #include "io.h"
 #include "investment.h"
 
-InvestmentDetails IO::GetInvestmentDetails()
+InvestmentDetails IO::get_investment_details()
 {
     InvestmentDetails investment_details = {-1, -1, -1, -1};
     cout << "**************************************" << endl;
     cout << "************ Data Input **************" << endl;
+    // Keep looping until user enters a valid value for each InvestmentDetails field.
     while (investment_details.initial_investment <= 0)
     {
         cout << "Initial Investment Amount: $";
@@ -36,14 +37,15 @@ InvestmentDetails IO::GetInvestmentDetails()
     return investment_details;
 }
 
-void IO::PrintReport(InvestmentReport report, string header)
+void IO::print_report(InvestmentReport t_report, string t_header)
 {
     cout << "====================================================================" << endl;
-    cout << "      " << header << endl;
+    cout << "      " << t_header << endl;
     cout << "====================================================================" << endl;
     cout << "Year               Year End Balance         Year End Earned Interest" << endl;
     cout << "--------------------------------------------------------------------" << endl;
-    for (YearEndBalance yeb : report.balances)
+    // Loop through each YearEndBalance, convert the values for better formatting, and print out each one.
+    for (YearEndBalance yeb : t_report.balances)
     {
         string balance = to_string(round(yeb.balance * 100.0) / 100.0);
         string interest = to_string(round(yeb.earned_interest * 100.00) / 100);

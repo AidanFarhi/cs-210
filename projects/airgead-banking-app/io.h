@@ -21,7 +21,7 @@ class IO
          *
          * \see InvestmentDetails
          */
-        InvestmentDetails GetInvestmentDetails();
+        InvestmentDetails get_investment_details();
 
         /**
          * \brief Prints an investment report to the console.
@@ -29,8 +29,8 @@ class IO
          * This method displays a formatted report containing year-by-year balances and earned interest
          * based on the provided InvestmentReport. The header parameter is used to provide a title for the report.
          *
-         * \param report The InvestmentReport containing year-end balances and earned interest.
-         * \param header A string representing the header/title for the report.
+         * \param t_report The InvestmentReport containing year-end balances and earned interest.
+         * \param t_header A string representing the header/title for the report.
          *
          * The report is displayed in a tabular format, including the year, year-end balance, and year-end earned interest.
          *
@@ -38,7 +38,7 @@ class IO
          *
          * \see InvestmentReport, YearEndBalance
          */
-        void PrintReport(InvestmentReport report, string header);
+        void print_report(InvestmentReport t_report, string t_header);
 };
 
 #endif
