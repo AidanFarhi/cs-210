@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 #include "io.h"
@@ -33,11 +34,19 @@ void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
     cin.get();
 }
 
-void IO::PrintReport(InvestmentReport report)
+void IO::PrintReport(InvestmentReport report, string header)
 {
-    for (YearEndBalance year_end_balance : report.balances)
+    cout << "====================================================================" << endl;
+    cout << "      " << header << endl;
+    cout << "====================================================================" << endl;
+    cout << "Year               Year End Balance         Year End Earned Interest" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
+    cout << fixed << setprecision(2);
+    for (YearEndBalance yeb : report.balances)
     {
-        cout << year_end_balance.year << " " << year_end_balance.balance;
-        cout << " " << year_end_balance.earned_interest << endl;
+        cout << setw(2) << yeb.year;
+        cout << setw(28) << right << "$" + to_string(yeb.balance).substr(0, to_string(yeb.balance).find('.') + 3);
+        cout << setw(28) << right << "$" + to_string(yeb.earned_interest).substr(0, to_string(yeb.earned_interest).find('.') + 3) << endl;
     }
+    cout << "====================================================================" << endl;
 }
