@@ -7,22 +7,22 @@ class IO
 {
     public:
         /**
-         * \brief Retrieves investment details from the user.
+         * \brief Retrieves investment details from the user through console input.
          *
-         * This method prompts the user to enter the initial investment amount, monthly deposit,
+         * This function prompts the user to enter the initial investment amount, monthly deposit,
          * annual interest rate, and the number of years for the investment. It ensures that each input
-         * is a positive value.
+         * is a positive value. The entered values are stored in an InvestmentDetails structure.
          *
-         * \param investment_details A reference to the InvestmentDetails structure where the input data will be stored.
+         * \return An InvestmentDetails structure containing the user-provided input values.
          *
          * The user is prompted to re-enter values if they are non-positive until valid inputs are provided.
          *
-         * \note This method assumes that the user interacts through the console (cout and cin).
+         * \note This function assumes that the user interacts through the console (cout and cin).
          *
          * \see InvestmentDetails
          */
-        void GetInvestmentDetails(InvestmentDetails& investment_details);
-        
+        InvestmentDetails GetInvestmentDetails();
+
         /**
          * \brief Prints an investment report to the console.
          *

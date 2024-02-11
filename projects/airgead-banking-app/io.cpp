@@ -5,8 +5,9 @@ using namespace std;
 #include "io.h"
 #include "investment.h"
 
-void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
+InvestmentDetails IO::GetInvestmentDetails()
 {
+    InvestmentDetails investment_details = {-1, -1, -1, -1};
     cout << "**************************************" << endl;
     cout << "************ Data Input **************" << endl;
     while (investment_details.initial_investment <= 0)
@@ -32,6 +33,7 @@ void IO::GetInvestmentDetails(InvestmentDetails& investment_details)
     cout << "Press any key to continue...";
     cin.ignore();
     cin.get();
+    return investment_details;
 }
 
 void IO::PrintReport(InvestmentReport report, string header)
