@@ -27,8 +27,7 @@ struct InvestmentReport
 class ReportGenerator
 {
     public:
-        InvestmentReport WithoutMonthlyDeposits(InvestmentDetails investment_details);
-        InvestmentReport WithMonthlyDeposits(InvestmentDetails investment_details);
+        InvestmentReport GenerateReport(InvestmentDetails investment_details, bool with_monthly_deposits);
 };
 
 #endif

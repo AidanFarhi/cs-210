@@ -41,12 +41,13 @@ void IO::PrintReport(InvestmentReport report, string header)
     cout << "====================================================================" << endl;
     cout << "Year               Year End Balance         Year End Earned Interest" << endl;
     cout << "--------------------------------------------------------------------" << endl;
-    cout << fixed << setprecision(2);
     for (YearEndBalance yeb : report.balances)
     {
+        string balance = to_string(round(yeb.balance * 100.0) / 100.0);
+        string interest = to_string(round(yeb.earned_interest * 100.00) / 100);
         cout << setw(2) << yeb.year;
-        cout << setw(28) << right << "$" + to_string(yeb.balance).substr(0, to_string(yeb.balance).find('.') + 3);
-        cout << setw(28) << right << "$" + to_string(yeb.earned_interest).substr(0, to_string(yeb.earned_interest).find('.') + 3) << endl;
+        cout << setw(28) << right << "$" + balance.substr(0, balance.find('.') + 3);
+        cout << setw(28) << right << "$" + interest.substr(0, interest.find('.') + 3) << endl;
     }
     cout << "====================================================================" << endl;
 }
