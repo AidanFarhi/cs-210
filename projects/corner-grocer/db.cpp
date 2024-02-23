@@ -19,7 +19,7 @@ unordered_map<string, int> get_all_frequencies(string word_list_file_path)
     return word_frequencies;
 }
 
-void generate_frequency_file(unordered_map<string, int> word_frequency_map, string frequency_file_path)
+void generate_frequency_file(unordered_map<string, int> item_frequencies, string frequency_file_path)
 {
     cout << "yolo" << endl;
 }
