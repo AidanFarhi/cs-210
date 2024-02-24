@@ -39,6 +39,14 @@ void display_item_frequencies(unordered_map<string, int> item_frequencies)
 void display_item_frequencies_histogram(unordered_map<string, int> item_frequencies)
 {
     cout << "---- Item Frequencies Histogram ----" << endl;
-    cout << "display_item_frequencies_histogram" << endl;
+    for (auto pair : item_frequencies)
+    {
+        cout << pair.first << " ";
+        for (int i = 0; i < pair.second; i++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
     cout << "------------------------------------" << endl;
 }
