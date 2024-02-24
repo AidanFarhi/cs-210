@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 void display_menu()
@@ -23,7 +24,6 @@ void lookup_item_frequency(unordered_map<string, int> item_frequencies, string i
     {
         cout << item << " not found." << endl;
     }
-    cout << "------------------------------------" << endl;
 }
 
 void display_item_frequencies(unordered_map<string, int> item_frequencies)
@@ -31,9 +31,8 @@ void display_item_frequencies(unordered_map<string, int> item_frequencies)
     cout << "--------- Item Frequencies ---------" << endl;
     for (auto pair : item_frequencies)
     {
-        cout << pair.first << " " << pair.second << endl;
+        cout <<  setw(14) << left << pair.first << pair.second << endl;
     }
-    cout << "------------------------------------" << endl;
 }
 
 void display_item_frequencies_histogram(unordered_map<string, int> item_frequencies)
@@ -41,12 +40,11 @@ void display_item_frequencies_histogram(unordered_map<string, int> item_frequenc
     cout << "---- Item Frequencies Histogram ----" << endl;
     for (auto pair : item_frequencies)
     {
-        cout << pair.first << " ";
+        cout << setw(14) << left << pair.first;
         for (int i = 0; i < pair.second; i++)
         {
             cout << "*";
         }
         cout << endl;
     }
-    cout << "------------------------------------" << endl;
 }
