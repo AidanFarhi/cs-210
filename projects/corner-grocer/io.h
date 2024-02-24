@@ -5,28 +5,17 @@
 #include <unordered_map>
 using namespace std;
 
-/**
- * @brief Displays the menu options for the program.
- */
-void display_menu();
+class IO
+{
+public:
 
-/**
- * @brief Looks up and displays the frequency of a specified item.
- * @param item_frequencies The unordered_map containing item frequencies.
- * @param item The item to look up.
- */
-void lookup_item_frequency(unordered_map<string, int> item_frequencies, string user_input);
+    void display_menu();
 
-/**
- * @brief Displays the list of item frequencies.
- * @param item_frequencies The unordered_map containing item frequencies.
- */
-void display_item_frequencies(unordered_map<string, int> item_frequencies);
+    void lookup_item_frequency(unordered_map<string, int> item_frequencies, string user_input);
 
-/**
- * @brief Displays the item frequencies as a histogram.
- * @param item_frequencies The unordered_map containing item frequencies.
- */
-void display_item_frequencies_histogram(unordered_map<string, int> item_frequencies);
+    void display_item_frequencies(unordered_map<string, int> item_frequencies);
+
+    void display_item_frequencies_histogram(unordered_map<string, int> item_frequencies);
+};
 
 #endif

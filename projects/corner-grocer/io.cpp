@@ -2,7 +2,9 @@
 #include <iomanip>
 using namespace std;
 
-void display_menu()
+#include "io.h"
+
+void IO::display_menu()
 {
     cout << "------------ Menu Options ----------" << endl;
     cout << "(1) search for an item frequency" << endl;
@@ -13,7 +15,7 @@ void display_menu()
     cout << ">";
 }
 
-void lookup_item_frequency(unordered_map<string, int> item_frequencies, string item)
+void IO::lookup_item_frequency(unordered_map<string, int> item_frequencies, string item)
 {
     cout << "-----------    Result     ----------" << endl;
     if (item_frequencies.find(item) != item_frequencies.end())
@@ -26,7 +28,7 @@ void lookup_item_frequency(unordered_map<string, int> item_frequencies, string i
     }
 }
 
-void display_item_frequencies(unordered_map<string, int> item_frequencies)
+void IO::display_item_frequencies(unordered_map<string, int> item_frequencies)
 {
     cout << "--------- Item Frequencies ---------" << endl;
     for (auto pair : item_frequencies)
@@ -35,7 +37,7 @@ void display_item_frequencies(unordered_map<string, int> item_frequencies)
     }
 }
 
-void display_item_frequencies_histogram(unordered_map<string, int> item_frequencies)
+void IO::display_item_frequencies_histogram(unordered_map<string, int> item_frequencies)
 {
     cout << "---- Item Frequencies Histogram ----" << endl;
     for (auto pair : item_frequencies)

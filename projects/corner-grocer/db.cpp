@@ -4,23 +4,28 @@ using namespace std;
 
 #include "db.h"
 
-unordered_map<string, int> get_all_frequencies(string word_list_file_path)
+DB::DB(string item_list_file_path)
 {
-    unordered_map<string, int> word_frequencies;
-    ifstream file(word_list_file_path);
+    unordered_map<string, int> frequencies;
+    ifstream file(item_list_file_path);
     if (file.is_open())
     {
         string line;
         while (getline(file, line))
         {
-            word_frequencies[line]++;
+            frequencies[line]++;
         }
         file.close();
     }
-    return word_frequencies;
+    item_frequencies = frequencies;
 }
 
-void generate_frequency_file(unordered_map<string, int> item_frequencies, string frequency_file_path)
+unordered_map<string, int> DB::get_all_frequencies()
+{
+    return item_frequencies;
+}
+
+void DB::generate_frequency_file(string frequency_file_path)
 {
     ofstream file(frequency_file_path);
     if (file.is_open())
