@@ -7,13 +7,16 @@ using namespace std;
 
 int main()
 {
+    // Initialize variables.
     string user_input = "";
     string input_file_name = "CS210_Project_Three_Input_File.txt";
     string frequency_file_name = "frequency.dat";
 
+    // Load the frequencies into a map and save the frequencies to a file.
     unordered_map<string, int> item_frequencies = get_all_frequencies(input_file_name);
     generate_frequency_file(item_frequencies, frequency_file_name);
 
+    // Main program loop.
     while (user_input != "4")
     {
         display_menu();
@@ -38,4 +41,7 @@ int main()
             continue;
         }
     }
+
+    // Exit program.
+    return 0;
 }
