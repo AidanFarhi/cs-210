@@ -17,7 +17,7 @@ void IO::display_menu()
 
 void IO::lookup_item_frequency(unordered_map<string, int> item_frequencies, string item)
 {
-    cout << "-----------    Result     ----------" << endl;
+    cout << "-------------- Result --------------" << endl;
     if (item_frequencies.find(item) != item_frequencies.end())
     {
         cout << item << " " << item_frequencies.at(item) << endl;

@@ -13,8 +13,10 @@ int main()
     string frequency_file_name = "frequency.dat";
     IO io;
 
-    // Instantiate the DB storing the frequency using the input file name and generate the frequency file.
+    // Instantiate the DB storing the item frequencies.
     DB db = DB(input_file_name);
+
+    // Generate the frequency.dat file.
     db.generate_frequency_file(frequency_file_name);
 
     // Main program loop.
