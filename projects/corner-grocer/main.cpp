@@ -39,8 +39,13 @@ int main()
         {
             io.display_item_frequencies_histogram(db.get_all_frequencies());
         }
+        else if (user_input == "4")
+        {
+            cout << "Goodbye!" << endl;
+        }
         else
         {
+            cout << "invalid option." << endl;
             continue;
         }
     }
